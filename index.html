@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budget Tracker App</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Budget Tracker</h1>
+    </header>
+    <main>
+      <section id="summary">
+        <h2>Budget Summary</h2>
+        <p>Total Income: $<span id="total-income">0</span></p>
+        <p>Total Expense: $<span id="total-expense">0</span></p>
+        <p>Remaining Balance: $<span id="balance">0</span></p>
+      </section>
+      <section id="add-transaction">
+        <h2>Add Transaction</h2>
+        <form id="transaction-form">
+          <input type="text" id="description" placeholder="Description" required />
+          <input type="number" id="amount" placeholder="Amount" required />
+          <select id="category" required>
+            <option value="" disabled selected>Select Category</option>
+            <option value="Shopping">Shopping</option>
+            <option value="Rent">Rent</option>
+            <option value="Salary">Salary</option>
+            <option value="Other">Other</option>
+          </select>
+          <select id="type" required>
+            <option value="" disabled selected>Select Type</option>
+            <option value="income">Income</option>
+            <option value="expense">Expense</option>
+          </select>
+          <button id="submit">Add Transaction</button>
+        </form>
+      </section>
+      <section id="transactions">
+        <h2>Transaction List</h2>
+        <ul id="transaction-list"></ul>
+      </section>
+      <section id="chart">
+        <h2>Spending by Category</h2>
+        <canvas id="category-chart" width="400" height="400"></canvas>
+      </section>
+    </main>
+    <script src="/js/script.js"></script>
+    <footer></footer>
+  </body>
+</html>
